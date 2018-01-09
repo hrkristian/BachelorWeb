@@ -1,11 +1,17 @@
+{% load staticfiles %}
+
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="{% static 'site/style.css' %}">
   <meta charset="utf-8">
   <title>
     {% block title %}
-      Bachelor Prosjekt KANO
+    Bachelor Prosjekt KANO
     {% endblock %}
   </title>
+  {% block head %}
+
+  {% endblock %}
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if IE]><script
@@ -18,18 +24,25 @@
 <body>
 
 <div><!-- container -->
-  <header>
-    <h1>Bachelor Prosjekt KANO</h1>
-  </header>
-
+  <header><h1>
+  {% block header %}
+    Bachelor Prosjekt
+  {% endblock %}
+  </h1></header>
   <nav>
-    Navigasjon
+    <a class="nav_item" href="{% url 'home' %}">Forside</a>
+    <a class="nav_item" href="{% url 'skisse' %}">Prosjektskisse</a>
+    <a class="nav_item" href="{% url 'beskrivelse' %}">Prosjektbeskrivelse</a>
   </nav>
 
   <main>
     {% block content %}
-      This is default content!
-
+    <h2>Gruppemedlemmer</h2>
+    <p>
+    {% for name in medlemmer %}
+      {{ name }},
+    {% endfor %}
+    </p>
     {% endblock %}
   </main>
 </div> <!-- container -->
