@@ -1,0 +1,2 @@
+# BachelorWeb
+Nettside for bacherlorprosjektet
