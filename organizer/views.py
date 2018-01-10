@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.http.response import HttpResponse
 
+from .models import Medlem
 # Create your views here.
 class Home(View):
+    medlemmer = Medlem.objects.all()
     template_name = 'organizer/home.html'
-    medlemmer = ['Kristian Robertsen', 'Atle Amundsen', 'Nikolai Fosså']
     def get(self, request):
         return render(request, self.template_name, {'medlemmer':self.medlemmer})
 

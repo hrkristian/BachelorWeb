@@ -1,54 +1,63 @@
 /*
 * Dette er default stylesheet
 */
+.nav_item#current_link {
+  filter: brightness(200%);
+}
 .nav_item {
   display: inline-block;
   color: #fff;
   text-decoration: none;
   padding: 5px 10px;
+  margin: 5px 0;
   font-size: 1.1em;
   background-color: rgb(47, 52, 63);
-  border: 1px solid black;
-  border-top: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 .nav_item:hover {
-  background-color: rgb(56, 62, 75) ;
+  filter: brightness(200%) !important;
 }
 h1 {
   margin: 0;
   padding: 20px 0;
 }
-
+footer p {
+  margin: 0;
+  line-height: 2rem;
+}
 main {
   border: 1px solid #999;
   margin: 20px;
   padding: 20px;
 }
 nav {
-
+  margin-top: 10px;
 }
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: calc(100vw - 40px);
-
+  height: 2rem;
   text-align: center;
-  font-size: 1.2em;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 header, footer {
   background: rgb(47, 52, 63);
   color: #fff;
 }
-header, nav, footer {
+header, #main_nav, footer {
   padding-left: 20px;
   padding-right: 20px;
 }
 body {
-  margin: 0;
+  margin: 0 0 2rem 0;
   font-family: cantarell, calibri;
-  height: 100vh;
   background-color: #eee;
+}
+html {
+  position: relative;
+  min-height: 100vh;
 }

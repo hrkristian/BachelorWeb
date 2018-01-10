@@ -1,5 +1,21 @@
 {% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'organizer/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>Prosjektskisse</h2>
+<h2>Prosjektskisse / Forprosjektrapport</h2>
+<p>Bacherlorprosjekt hos Arkitektum AS</p>
+<a class="nav_item" id="file_link" href="{% static 'docs/Forprosjektrapport_Kano.pdf' %}">
+  Nedlastbar PDF
+</a>
+<h4>Sammendrag</h4>
+<p>
+  Dette dokumentet belyser de beslutninger som må tas og de planer vi har for bachelorprosjektet.<br>
+  Prosjektet skal kartlegge og resultere i et forslag for en software og hardware stack som er
+  optimalisert for behandling av lenkede data.
+</p>
+<p>Dette gjøres på oppdrag for og i samarbeid med Arkitektum AS.</p>
 {% endblock %}

@@ -1,0 +1,11 @@
+{% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h2>Dagbøker</h2>
+<nav>
+{% for medlem in medlemmer  %}
+  <a class="nav_item" href="{{ medlem.get_absolute_url }}">{{ medlem.name|title }}</a>
+{% endfor %}
+</nav>
+{% endblock %}

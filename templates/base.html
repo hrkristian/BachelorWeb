@@ -3,7 +3,9 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="{% static 'site/style.css' %}">
+  <script src="{% static 'js/base.js' %}"></script>
   <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}">
   <title>
     {% block title %}
     Bachelor Prosjekt KANO
@@ -21,7 +23,7 @@
 
   </style>
 </head>
-<body>
+<body onload="currentLink()">
 
 <div><!-- container -->
   <header><h1>
@@ -29,29 +31,32 @@
     Bachelor Prosjekt
   {% endblock %}
   </h1></header>
-  <nav>
+  <nav id="main_nav">
     <a class="nav_item" href="{% url 'home' %}">Forside</a>
     <a class="nav_item" href="{% url 'skisse' %}">Prosjektskisse</a>
     <a class="nav_item" href="{% url 'beskrivelse' %}">Prosjektbeskrivelse</a>
+    <a class="nav_item" href="{% url 'landing' %}">Dagbok</a>
   </nav>
 
   <main>
     {% block content %}
-    <h2>Gruppemedlemmer</h2>
+    <h2>Forside</h2>
+    <h3>Gruppemedlemmer</h3>
     <p>
-    {% for name in medlemmer %}
-      {{ name }},
-    {% endfor %}
+      {% for medlem in medlemmer %}
+        {% if not forloop.last %}
+          {{ medlem.name }},
+        {% else %}
+          {{ medlem.name }}
+        {% endif %}
+      {% endfor %}
     </p>
     {% endblock %}
   </main>
 </div> <!-- container -->
 
 <footer>
-  <p>
-    &copy;2018 Kristian Robertsen, Nikolai Fosså, Atle Amundsen</a>
-  </p>
+  <p>&copy;2018 Kristian Robertsen, Atle Amundsen, Nikolai Fosså</p>
 </footer>
-
 </body>
 </html>

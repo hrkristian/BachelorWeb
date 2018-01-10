@@ -19,9 +19,11 @@ from django.contrib import admin
 from .views import redirect_root
 
 from organizer import urls as organizer_urls
+from dagbok import urls as dagbok_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     ##url(r'^$', redirect_root),
-    url(r'^', include(organizer_urls))
+    url(r'^', include(organizer_urls)),
+    url(r'^dagbok/', include(dagbok_urls))
 ]
