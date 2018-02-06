@@ -1,0 +1,40 @@
+{% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'dagbok/create_post.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<h2>Nytt innlegg</h2>
+<form action="{{ form.get_create_url }}" method="post">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  <p>
+    {{ form.date.errors }}
+    <label for="{{ form.date.id_for_label }}">Dato</label>
+    {{ form.date }}
+  </p>
+  <p>
+    {{ form.title.errors }}
+    <label for="{{ form.title.id_for_label }}">Tittel</label>
+    {{ form.title }}
+  </p>
+  <p>
+    {{ form.text.errors }}
+    <label for="{{ form.text.id_for_label }}">Tekst</label>
+    {{ form.text }}
+  </p>
+  <p>
+    <div id="medlem_section">{{ form.medlem.errors }}</div>
+    <select id="id_medlem" name="medlem" style="display: none;">
+      <option value="1" selected>{{ slug }}</option>
+    </select>
+  </p>
+  <p>
+    <div id="slug_section">{{ form.slug.errors }}</div>
+    <input type="text" id="id_slug" name="slug" value="{{ slug }}" style="display: none;">
+  </p>
+  <button type="submit">Legg inn</button>
+</form>
+{% endblock %}
