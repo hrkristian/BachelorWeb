@@ -44,11 +44,14 @@
     <h3>Gruppemedlemmer</h3>
     <p>
       {% for medlem in medlemmer %}
-        {% if not forloop.last %}
-          {{ medlem.name }},
-        {% else %}
-          {{ medlem.name }}
-        {% endif %}
+        <div class="medlem_section">
+          <div class="medlem_section_image">
+            <img src="" alt="Profile Picture" class="medlem_section_item">
+          </div>
+          <div class="medlem_section_details">
+            <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
+          </div>
+        </div>
       {% endfor %}
     </p>
     {% endblock %}
