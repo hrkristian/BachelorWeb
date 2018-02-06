@@ -10,7 +10,11 @@ class Medlem(models.Model):
     help_text='A label for URL config.'
     )
     contact = models.EmailField()
+
     def get_absolute_url(self):
         return reverse('dagbok', kwargs={'slug':self.slug})
+    def get_create_url(self):
+        return reverse('dagbok_post_create', kwargs={'slug':self.slug})
+
     class Meta:
         ordering = ['name']

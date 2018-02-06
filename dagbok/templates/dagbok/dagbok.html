@@ -3,4 +3,11 @@
 
 {% block content %}
 <h2>Dagbok for {{ medlem.name }}</h2>
+<a class="nav_item" href="{{ medlem.get_create_url }}">Ny</a>
+<div>
+  {% for post in posts %}
+    <h3>{{ post.date|date:"l, F j, Y" }} - {{ post.title }}</h3>
+    <p>{{ post.text|linebreaks }}</p>
+  {% endfor %}
+</div>
 {% endblock %}
