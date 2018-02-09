@@ -1,0 +1,17 @@
+{% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'dagbok/edit_post.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Endre innlegg</h2>
+<form action="{{ form.get_edit_url }}" method="post">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {{ form.as_p }}
+  <button type="submit">Oppdater</button>
+
+</form>
+{% endblock %}

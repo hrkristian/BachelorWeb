@@ -8,6 +8,8 @@
   {% for post in posts %}
     <h3>{{ post.date|date:"l, F j, Y" }} - {{ post.title }}</h3>
     <p>{{ post.text|linebreaks }}</p>
+    <a class="nav_item" href="{{ post.get_edit_url }}">Rediger</a>
+    <a class="nav_item" href="{{ post.get_delete_url }}">Slett</a>
   {% endfor %}
 </div>
 {% endblock %}

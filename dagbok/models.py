@@ -18,6 +18,18 @@ class Post(models.Model):
         return reverse('dagbok', kwargs={'slug':self.slug})
     def get_create_url(self):
         return reverse('dagbok_post_create', kwargs={'slug':self.slug})
+    def get_edit_url(self):
+        return reverse('dagbok_post_edit', kwargs={
+            'slug':self.slug,
+            'year':self.date.year,
+            'month':self.date.month,
+            'day':self.date.day})
+    def get_delete_url(self):
+        return reverse('dagbok_post_delete', kwargs={
+            'slug':self.slug,
+            'year':self.date.year,
+            'month':self.date.month,
+            'day':self.date.day})
     class Meta:
         verbose_name = 'dagbok post'
         ordering = ['-date']

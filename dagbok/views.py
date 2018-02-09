@@ -19,17 +19,17 @@ class Dagbok(View):
     template_name = 'dagbok/dagbok.html'
     def get(self, request, slug):
         medlem = get_object_or_404(Medlem, slug=slug)
-        posts = Post.objects.all()
+        posts = Post.objects.filter(slug=slug)
         return render( request, self.template_name, {'posts':posts, 'medlem':medlem} )
 
 class PostMixin:
-    def get_object(self, name, year, month, day):
+    def get_object(self, slug, year, month, day):
         return get_object_or_404(
             self.model,
-            medlem=name,
-            pub_date__year=year,
-            pub_date__month=month,
-            pub_date__day=day
+            medlem__slug__iexact=slug,
+            date__year=year,
+            date__month=month,
+            date__day=day
         )
 
 class PostCreate(View, PostMixin):
@@ -52,12 +52,12 @@ class PostEdit(View, PostMixin):
     model = Post
     template_name = 'dagbok/update_post.html'
 
-    def get(self, request, name, year, month, day):
-        post = self.get_object(name, year, month, day)
+    def get(self, request, slug, year, month, day):
+        post = self.get_object(slug, year, month, day)
         context = {'form':self.form_class(instance=post), 'post':post}
         return render(request, self.template_name, context)
-    def post(self, request, name, year, month, day):
-        post = self.get_object(name, year, month, day)
+    def post(self, request, slug, year, month, day):
+        post = self.get_object(slug, year, month, day)
         bound_form = self.form_class(request.POST, instance=post)
         if bound_form.is_valid():
             new_post = bound_form.save()
@@ -67,12 +67,13 @@ class PostEdit(View, PostMixin):
             return render(request, self.template_name, context)
 
 class PostDelete(View, PostMixin):
+    model = Post
     template_name = 'dagbok/delete_post.html'
 
-    def get(self, request, name, year, month, day):
-        post = get_object(name, year, month, day)
+    def get(self, request, slug, year, month, day):
+        post = self.get_object(slug, year, month, day)
         return render(request, self.template_name, {'post':post})
-    def post(self, request, name, year, month, day):
-        post = get_object(name, year, month, day)
+    def post(self, request, slug, year, month, day):
+        post = get_object(slug, year, month, day)
         post.delete()
-        return redirect(reverse('dagbok', kwargs={'slug':name}))
+        return redirect(reverse('dagbok', kwargs={'slug':slug}))

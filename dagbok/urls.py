@@ -13,8 +13,8 @@ urlpatterns = [
     ),
     url(
         r'^(?P<slug>[\w\-]+)/'
-        r'(?P<year>\d{4})-'
-        r'(?P<month>\d{1,2})'
+        r'(?P<year>\d{4})/'
+        r'(?P<month>\d{1,2})/'
         r'(?P<day>\d{1,2})/'
         r'edit/$',
         PostEdit.as_view(),
@@ -22,8 +22,8 @@ urlpatterns = [
     ),
     url(
         r'^(?P<slug>[\w\-]+)/'
-        r'(?P<year>\d{4})-'
-        r'(?P<month>\d{1,2})'
+        r'(?P<year>\d{4})/'
+        r'(?P<month>\d{1,2})/'
         r'(?P<day>\d{1,2})/'
         r'delete/$',
         PostDelete.as_view(),

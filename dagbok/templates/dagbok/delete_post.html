@@ -1,0 +1,16 @@
+{% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'dagbok/edit_post.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Slette innlegg</h2>
+<form action="{{ form.get_delete_url }}" method="post">
+  {% csrf_token %}
+  <p>Er du sikker på at innlegget skal slettes?</p>
+  <button type="submit">Ja, slett</button>
+  <a href="{{ form.get_absolute_url }}">Nei, avbryt</a>
+</form>
+{% endblock %}
