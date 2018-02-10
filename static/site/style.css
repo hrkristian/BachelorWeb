@@ -2,35 +2,6 @@
 * Dette er default stylesheet
 */
 
-.medlem_section_image img {
-
-}
-.medlem_section_details {
-  display: inline-block;
-  vertical-align: top;
-
-  padding: 1em;
-}
-.medlem_section_image {
-  display: inline-block;
-  vertical-align: top;
-  width: 50px;
-  height: 50px;
-  background-color: rgb(47, 52, 63);
-  color: white;
-  padding: 1em;
-  margin: 0.5em;
-}
-.medlem_section {
-  position: relative;
-  overflow: hidden;
-  max-width: 600px;
-  border: 1px solid rgb(47, 52, 63);
-  box-shadow: 0 0 10px rgb(47, 52, 63);
-  margin: 20px 0;
-
-}
-
 .nav_item#current_link {
   filter: brightness(200%);
 }
@@ -64,26 +35,28 @@ main {
 nav {
   margin-top: 10px;
 }
+#footer-bump {
+  opacity: 0;
+  width: calc(100vw - 40px);
+}
 footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: calc(100vw - 40px);
-  height: 2rem;
   text-align: center;
-  overflow-x: scroll;
   white-space: nowrap;
 }
 header, footer {
   background: rgb(47, 52, 63);
   color: #fff;
 }
-header, #main_nav, footer {
+header, #main_nav, footer, #footer-bump {
   padding-left: 20px;
   padding-right: 20px;
 }
 body {
-  margin: 0 0 2rem 0;
+  margin: 0;
   font-family: cantarell, calibri;
   background-color: #eee;
 }

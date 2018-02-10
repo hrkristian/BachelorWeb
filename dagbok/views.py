@@ -34,6 +34,7 @@ class PostMixin:
 
 class PostCreate(View, PostMixin):
     form_class = PostForm
+    model = Post
     template_name = 'dagbok/create_post.html'
 
     def get(self, request, slug):
@@ -74,6 +75,6 @@ class PostDelete(View, PostMixin):
         post = self.get_object(slug, year, month, day)
         return render(request, self.template_name, {'post':post})
     def post(self, request, slug, year, month, day):
-        post = get_object(slug, year, month, day)
+        post = self.get_object(slug, year, month, day)
         post.delete()
         return redirect(reverse('dagbok', kwargs={'slug':slug}))

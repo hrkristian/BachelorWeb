@@ -10,7 +10,7 @@
 <form action="{{ form.get_delete_url }}" method="post">
   {% csrf_token %}
   <p>Er du sikker på at innlegget skal slettes?</p>
-  <button type="submit">Ja, slett</button>
-  <a href="{{ form.get_absolute_url }}">Nei, avbryt</a>
+  <button class="nav_item" type="submit">Ja, slett</button>
+  <a class="nav_item" href="{{ post.get_absolute_url }}">Nei, avbryt</a>
 </form>
 {% endblock %}

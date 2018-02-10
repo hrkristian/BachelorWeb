@@ -12,8 +12,9 @@
     {% endblock %}
   </title>
   {% block head %}
-
+  <link rel="stylesheet" href="{% static 'site/landing.css' %}">
   {% endblock %}
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if IE]><script
@@ -25,7 +26,7 @@
 </head>
 <body onload="currentLink()">
 
-<div><!-- container -->
+
   <header><h1>
   {% block header %}
     Bachelor Prosjekt
@@ -38,25 +39,28 @@
     <a class="nav_item" href="{% url 'landing' %}">Dagbok</a>
   </nav>
 
-  <main>
-    {% block content %}
-    <h2>Forside</h2>
-    <h3>Gruppemedlemmer</h3>
-    <p>
-      {% for medlem in medlemmer %}
-        <div class="medlem_section">
-          <div class="medlem_section_image">
-            <img src="" alt="Profile Picture" class="medlem_section_item">
-          </div>
-          <div class="medlem_section_details">
-            <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
-          </div>
+<main>
+  {% block content %}
+  <h2>Forside</h2>
+  <h3>Gruppemedlemmer</h3>
+  <p>
+    {% for medlem in medlemmer %}
+      <div class="medlem_section">
+        <div class="medlem_section_image">
+          <img src="{% static 'images/profil_'|add:medlem.slug|add:'.jpg' %}" alt="Profile Picture" class="medlem_section_item">
         </div>
-      {% endfor %}
-    </p>
-    {% endblock %}
-  </main>
-</div> <!-- container -->
+        <div class="medlem_section_details">
+          <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
+          {% if medlem.slug == 'atle' %}
+          Prosjektleder
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </p>
+  {% endblock %}
+</main>
+<div id="footer-bump"><p>&copy;2018 Kristian Robertsen, Atle Amundsen, Nikolai Fosså</p></div>
 
 <footer>
   <p>&copy;2018 Kristian Robertsen, Atle Amundsen, Nikolai Fosså</p>

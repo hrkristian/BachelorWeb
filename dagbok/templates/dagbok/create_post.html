@@ -1,7 +1,7 @@
 {% extends parent_template|default:"base.html" %}
 {% load staticfiles %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'dagbok/create_post.css' %}">
+  <link rel="stylesheet" href="{% static 'dagbok/create_post.css' %}">
 
 {% endblock %}
 
@@ -12,17 +12,18 @@
   {{ form.non_field_errors }}
   <p>
     {{ form.date.errors }}
-    <label for="{{ form.date.id_for_label }}">Dato</label>
+    <label for="{{ form.date.id_for_label }}">Dato (YYYY-MM-DD)</label>
+
     {{ form.date }}
   </p>
   <p>
     {{ form.title.errors }}
-    <label for="{{ form.title.id_for_label }}">Tittel</label>
+    <label for="{{ form.title.id_for_label }}">Tittel (Subject)</label>
     {{ form.title }}
   </p>
   <p>
     {{ form.text.errors }}
-    <label for="{{ form.text.id_for_label }}">Tekst</label>
+    <label for="{{ form.text.id_for_label }}">Tekst (Selve rapporten)</label>
     {{ form.text }}
   </p>
   <p>
@@ -35,6 +36,7 @@
     <div id="slug_section">{{ form.slug.errors }}</div>
     <input type="text" id="id_slug" name="slug" value="{{ slug }}" style="display: none;">
   </p>
-  <button type="submit">Legg inn</button>
+  <button class="nav_item" type="submit">Legg inn (Legg inn)</button>
+  <a class="nav_item" href="{% url 'dagbok' slug %}">Avbryt</a>
 </form>
 {% endblock %}
