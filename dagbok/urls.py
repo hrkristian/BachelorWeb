@@ -21,6 +21,7 @@ urlpatterns = [
         name="dagbok_post_edit"
     ),
     url(
+
         r'^(?P<slug>[\w\-]+)/'
         r'(?P<year>\d{4})/'
         r'(?P<month>\d{1,2})/'

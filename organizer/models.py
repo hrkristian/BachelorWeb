@@ -11,6 +11,9 @@ class Medlem(models.Model):
     )
     contact = models.EmailField()
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('dagbok', kwargs={'slug':self.slug})
     def get_create_url(self):

@@ -7,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=63)
     slug = models.SlugField(
     max_length=255,
-    help_text='A label for URL config.',
+    help_text='A label for URL config. (Må være "nikolai". "atle". eller "kristian")',
     unique_for_date='date'
     )
     text = models.TextField()
