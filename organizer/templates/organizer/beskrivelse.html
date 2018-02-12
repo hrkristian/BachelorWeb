@@ -1,5 +1,408 @@
 {% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'organizer/beskrivelse.css' %}">
+{% endblock %}
 
 {% block content %}
 <h2>Prosjektbeskrivelse</h2>
+<a class="nav_item" id="file_link" href="{% static 'docs/Prosjektskisse_Kano.pdf' %}">
+  Nedlastbar PDF
+</a>
+<p>Obs! Forbehold om feil på siden, PFDen er det offisielle dokumentet.</p>
+
+<h3>Sammendrag</h3>
+<p>
+  Arkitektum AS har under sin databehandling vurdert behovet for å benytte grafdatabaser i produksjon. <br>
+  De er interessert i teknologien, men de har ikke kapasitet/ressurser til å
+  tilegne seg kunnskap på området. De har av den grunn valgt å kjøre et
+  bachelorprosjekt som skal resultere i en erfaringsrapport.
+</p>
+<h3>Introduksjon</h3>
+<p>
+  Dette dokumentet belyser de beslutninger som må tas og de planer vi har for bachelorprosjektet. <br>
+  Prosjektet skal kartlegge og resultere i en erfaringsrapport som detaljerer prosessen med å
+  ta inn datasett og eventuelt omforme de, slik at det kan representeres i en grafdatabase.
+  Dette gjøres på oppdrag for og i samarbeid med Arkitektum AS.
+</p>
+<h3>Bakgrunn</h3>
+<p>
+  Arkitektum AS har under sin databehandling vurdert behovet for å benytte grafdatabaser i
+  produksjon. De er interessert i teknologien, men de har ikke kapasitet/ressurser til å tilegne seg
+  kunnskap på området. De har av den grunn valgt å kjøre et bachelorprosjekt som skal resultere i en
+  erfaringsrapport.
+</p>
+<h3>Problembeskrivelse og mål</h3>
+<p>
+  Arkitektum AS har et ønske om å ta i bruk teknologi som omhandler grafdatabaser. For å avgjøre om
+  dette er en teknologi som kan passe for enkelte forretningstilfeller hos de, behøver de en
+  erfaringsrapport som vurderer egnede databaser og dokumenterer prosessen med å konvertere data
+  til passende format, og hvordan koble/lenke et datasett med et annet. I rapporten er det spesielt
+  viktig at problemområder og løsningene på disse detaljeres.
+</p>
+<p>
+  Oversikt og teoretisk sammenligning av flere grafdatabaser skal også inngå i erfaringsrapporten.
+  Dersom det er tid, vil vi også utarbeide en erfaringsrapport for en annen grafdatabase, med
+  utgangspunkt i samme datasett.
+</p>
+<p>
+  En slik rapport gjør at Arkitektum AS enklere kan vurdere mengde forarbeid ved bruk av andre typer datasett.
+</p>
+<p>
+  Vi tar utgangspunkt i datasettet Administrative Enheter (dataeier: Kartverket).
+</p>
+<h4>Resultatmål</h4>
+<p>
+  Etter endt prosjektarbeid skal det foreligge en erfaringsrapport som vurderer egnethet for innsetting
+  av data og eventuell kobling mellom flere datasett i en grafdatabase. Rapporten skal inneholde
+  grundige beskrivelser av problemområder og løsninger på disse som oppdages underveis. Rapporten
+  skal overleveres til oppdragsgiver 27.04.2018.
+</p>
+<h4>Effektmål</h4>
+<p>
+  Beslutningsgrunnlag på om Arkitektum AS ønsker å ta i bruk grafdatabaser (den grafdatabasen vi har
+  valgt å arbeide med i prosjektarbeidet).
+</p>
+<p>
+  Tids- og kostnadsbesparelser for Arkitektum AS.
+</p>
+<h4>Prosessmål</h4>
+<p>
+  Erfaring med å arbeide i prosjekter ved bruk av smidige metoder (Kanban).
+</p>
+<p>
+  Erfaring med et prosjektstyringsverktøyet Jira. Programvaren gjøres tilgjengelig gjennom Arkitektum
+  AS i prosjektperioden. Dette støtter opp under valgt utviklingsmetode (Kanban).
+</p>
+<p>
+  Kompetanseoppbygging i en eller flere grafdatabaser.
+</p>
+<h3>Prosjektets omfang</h3>
+<p>
+  Prosjektet starter med å skrive erfaringsrapport for grafdatabasen Neo4j.
+</p>
+<p>
+  Prosjektet handler ikke om å gjøre data tilgjengelig som lenkede åpne data.
+</p>
+<p>
+  Felles arbeidstider på lab:
+</p>
+<div id="arbeidstider">
+  <table>
+    <thead>
+      <tr>
+        <th>Mandag</th>
+        <th>Tirsdag</th>
+        <th>Onsdag</th>
+        <th>Torsdag</th>
+        <th>Fredag</th>
+        <th>Lørdag</th>
+        <th>Søndag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>0930-1500</td>
+        <td>1200-1500</td>
+        <td></td>
+        <td>0930-1500</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="7">Det legges også opp til selvstudie utover de oppsatte felles tider.</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<h4>Fremdriftsplan og tidsbudsjett</h4>
+<p>
+  <div id="fremdriftsplan">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="14">Ukenummer</th>
+        </tr>
+        <tr>
+          <th>Faser</th>
+          <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+          <th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th>
+        </tr>
+      </thead>
+      <tbody id="tidsbudsjett_rader">
+        <tr>
+          <td>Prosjektbeskrivelse</td>
+          {% for i in 'vviiiiiiiiiiii' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_red"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Datakonvertering</td>
+          {% for i in 'ivvvviiiiiiiii' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_green"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Koble datasett</td>
+          {% for i in 'iiiiivvvviiiii' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_pink"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Ferdigstilling/overlevering erfaringsrapport</td>
+          {% for i in 'iiiiiiiiivvvii' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_blue"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Rapportlevering m/vedlegg</td>
+          {% for i in 'iiiiiiiiiiiivv' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_yellow"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        <tr>
+          <td>Dokumentasjon (erfaringsrapport)</td>
+          {% for i in 'ivvvvvvvviiiii' %}
+            {% if i == 'v' %}
+              <td class="tidsbudsjett_celle_fill"></td>
+            {% else %}
+              <td></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</p>
+<h4>Tidsestimat -  kan/vil være unøyaktig</h4>
+<table id="tidsestimat">
+  <tbody>
+    <tr>
+      <td> </td>
+      <td rowspan="2" class="tidsbudsjett_celle_red"></td>
+      <td class="tidsbudsjett_celle_fill"></td>
+      <td class="tidsbudsjett_celle_fill"></td>
+      <td rowspan="2" class="tidsbudsjett_celle_blue"></td>
+      <td rowspan="2" class="tidsbudsjett_celle_yellow"></td>
+    </tr>
+    <tr>
+      <td></td><td class="tidsbudsjett_celle_green"></td><td class="tidsbudsjett_celle_pink"></td>
+    </tr>
+    <tr>
+      <td>Timer</td><td>10</td><td>240</td><td>240</td><td>180</td><td>120</td>
+    </tr>
+  </tbody>
+</table>
+<h4>Milepælsplan</h4>
+<table id="milestone">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Oppgave</th>
+      <th>Forventet fullført</th>
+      <th>Beskrivelse/Aktiviteter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tidsbudsjett_celle_green">1</td>
+      <td>Prosjektbeskrivelse</td>
+      <td>06.02.2018</td>
+      <td>Kontraktsignering og presentasjon av prosjektbeskrivelse</td>
+    </tr>
+    <tr>
+      <td class="tidsbudsjett_celle_red">2</td>
+      <td>Datakonvertering</td>
+      <td>06.03.2018</td>
+      <td>
+        <p>Tilegning av kunnskap om grafdatabaser</p>
+        <p>Finne/lage teknologi for å konvertere datasett til ønsket format</p>
+        <p>Koble innbyrdes data i datasettet (geografiske punkter)</p>
+        <p>Implementere løsningen i grafdatabasen</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="tidsbudsjett_celle_green">3</td>
+      <td>Koble datasett</td>
+      <td>06.04.2018</td>
+      <td>
+        <p>Koble et annet datasett med datasettet Administrative Enheter</p>
+        <p>Modellere/identifisere relasjoner mellom datasettene</p>
+        <p>Implementere løsningen i grafdatabasen</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="tidsbudsjett_celle_pink">4</td>
+      <td>Overlevering til oppdragsgiver</td>
+      <td>27.04.2018</td>
+      <td>Overlevering av prosjektresultat til Arkitektum AS.</td>
+    </tr>
+    <tr>
+      <td class="tidsbudsjett_celle_blue">5</td>
+      <td>Rapportlevering</td>
+      <td>08.05.2018</td>
+      <td>
+        <p>Overlevering av prosjektrapport med erfaringsrapport til HSN.</p>
+        <p>Overlevering av prosjektrapport til Arkitektum AS dersom de ønsker den.</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="tidsbudsjett_celle_yellow">6</td>
+      <td>Erfaringsrapport</td>
+      <td>23.04.2018</td>
+      <td>
+        <p>Dokumentere: <br> Utfordringer og løsninger ved alle aktiviteter under milepæl 2 og 3.</p>
+        <p>
+          Hva har vi gjort (kortfattet). <br>
+          Hvordan vi har gjort det. <br>
+          Hvorfor vi gjorde det slik.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Interessenter og rammebetingelser</h3>
+
+<h4>Interessenter</h4>
+<p>Arkitektum AS (eid (100%) av Tkt Utvikling AS hvor Tor Kjetil Nilsen er Styreleder og hovedaksjonær (100%))</p>
+<p>HSN v/Ingrid Sundbø, Prosjektveileder</p>
+<p>Prosjektgruppa v/Nikolai Fosså, Kristian Robertsen og Atle Amundsen.</p>
+<p><b>Brukere: </b>Arkitektum AS</p>
+
+<h4>Suksesskriterier</h4>
+<h5>Prosjektgruppe</h5>
+<p>Konvertering av datasett til egnet format er vellykket, og datasettet blir satt inn i grafdatabasen.</p>
+<p>Ferdigstilt erfaringsrapport og prosjektrapport.</p>
+<h5>Arkitektum</h5>
+<p>Mottatt ferdigstilt erfaringsrapport.</p>
+<h5>Høgskolen i Sørøst-Norge</h5>
+<p>Mottatt ferdigstilt prosjektrapport.</p>
+
+<h4>Rammebetingelser</h4>
+<p>Erfaringsrapport overleveres oppdragsgiver 27.04.2018</p>
+<p>Prosjektarbeidet skal avsluttes innen 08.05.2018.</p>
+<p>Estimert samlet tidsforbruk er 790 timer.</p>
+<h5>Utvikling</h5>
+<p>
+  Programmeringsspråk for utvikling av tilleggsmoduler til Neo4j skal skje ved bruk av enten Python 3.X eller Java 9.
+  Hvilket språk som blir benyttet for modulene gjøres på grunnlag av fortløpende analyser av behov og tilgjengelige ressurser i språket.
+</p>
+<p>
+  I prosjektgruppen benytter vi forskjellige operativsystemer:
+  <ul>
+    <li>Windows 10</li>
+    <li>Arch Linux</li>
+    <li>Ubuntu Linux</li>
+  </ul>
+</p>
+<p>Verktøy for Java-utvikling blir IntelliJ IDEA</p>
+<p>
+  Produksjonsmiljø er følgende stack
+  <ul>
+    <li>x86 maskin-arkitektur</li>
+    <li>Ubuntu Linux</li>
+    <li>Neo4j</li>
+    <li>Chrome & Firefox for visualisering</li>
+  </ul>
+</p>
+<h5>Informasjonskanaler</h5>
+<p>Interessentene kan følge fremgangen i prosjektet via prosjektweb.</p>
+<p>Ved spesielle tilfeller tar prosjektdeltakerne direkte kontakt med oppdragsgiver og/eller veileder.</p>
+<h5>Krav til dokumentasjon</h5>
+<p>Hva prosjektdeltakerne jobber med til daglig dokumenteres kontinuerlig gjennom prosjektforløpet.</p>
+
+<h3>Risikoanalyse</h3>
+<p>Vi har identifisert følgende forhold som kan føre til at prosjektet ikke lykkes:</p>
+
+<h4>Manglende erfaring med grafdatabaser</h4>
+<p>Ingen i prosjektgruppen har tidligere erfaring med grafdatabaser. Dette krever at prosjektgruppen må legge tid i å tilegne oss kunnskap om teknologien.</p>
+<p>Tidsanslag kan være upresise som følge av dette.</p>
+<h5>Forebyggende tiltak</h5>
+<p>Konkrete arbeidsoppgaver som retter seg inn mot angitte mål.</p>
+
+<h4>Konvertering av datasett</h4>
+<p>All fremgang i prosjektet avhenger av denne faktoren. Dersom dette ikke lar seg gjøre fører det til forsinkelser i produksjon av prosjektresultat.</p>
+<h5>Forebyggende tiltak:</h5>
+<p>Kontakt med Thomas Ellet von Brasch i kartverket, som har vært gjennom denne prosessen tidligere, men med en annen grafdatabase.</p>
+
+<h4>Sykdom blant prosjektdeltakerne</h4>
+<p>Fører til redusert fremgang i prosjektarbeidet.</p>
+<h5>Forebyggende tiltak</h5>
+<p>Ikke dra på arbeid dersom man mistenker sykdomsforløp.</p>
+<p>Tidsanslag er estimert med slingringsmonn; det forventes å nå mål før tiden ved normal fremgang.</p>
+
+<h3>Retningslinjer og standarder</h3>
+<h4>Prosjektorganisering</h4>
+<h5>Oppdragsgiver</h5>
+<p style="padding-left: 20px;">Arkitektum AS</p>
+<table class="table_ansvar">
+  <thead><tr><th colspan="2">Roller og rolleinnehavere</th></tr></thead>
+  <tbody>
+    <tr><td>Oppdragseier</td><td>Tor Kjetil Nilsen</td></tr>
+    <tr><td>Kontaktperson</td><td>Henning Jensen</td></tr>
+  </tbody>
+</table>
+<h5>Oppdragstaker</h5>
+<p style="padding-left: 20px;">Prosjektgruppa, på vegne av Høgskolen i Sørøst-Norge</p>
+<table class="table_ansvar">
+  <thead><tr><th colspan="2">Roller og rolleinnehavere</th></tr></thead>
+  <tbody>
+    <tr><td>Veileder</td><td>Ingrid Sundbø m/flere etter behov</td></tr>
+    <tr><td>Prosjektdeltaker</td><td>Nikolai Fosså <br>Kristian Robertsen <br>Atle Amundsen</td></tr>
+    <tr><td>Prosjektleder</td><td>Atle Amundsen</td></tr>
+  </tbody>
+</table>
+<h5>Rollers ansvarsområder</h5>
+<table class="table_ansvar">
+  <tbody>
+    <tr>
+      <td>Prosjektleder</td>
+      <td>
+        <p>Kommunikasjon med oppdragsgiver.</p>
+        <p>Overordnet ansvar for delegering og oppfølging av oppgaver.</p>
+      </td>
+    </tr>
+    <tr><td>Prosjekteier</td><td> - - -</td></tr>
+    <tr>
+      <td>Veileder</td>
+      <td>
+        <p>Bistå med nødvendig veiledning under prosjektarbeidet.</p>
+        <p>Kvalitetssikring.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Prosjektdeltaker</td>
+      <td>
+        <p>Utføre arbeidsoppgavene som identifiseres underveis i prosjektarbeidet.</p>
+        <p>Kunnskapstilegnelse foregår på lik linje blant prosjektmedlemmene.</p>
+      </td>
+    </tr>
+    <tr></tr>
+  </tbody>
+</table>
 {% endblock %}

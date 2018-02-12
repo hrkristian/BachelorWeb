@@ -37,21 +37,20 @@ nav {
 }
 #footer-bump {
   opacity: 0;
-  width: calc(100vw - 40px);
 }
 footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(100vw - 40px);
   text-align: center;
   white-space: nowrap;
+  width: 100%;
 }
 header, footer {
   background: rgb(47, 52, 63);
   color: #fff;
 }
-header, #main_nav, footer, #footer-bump {
+header, #main_nav {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -63,4 +62,5 @@ body {
 html {
   position: relative;
   min-height: 100vh;
+  font-size: 1.1em;
 }
