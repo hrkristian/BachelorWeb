@@ -9,3 +9,10 @@ __pycache__/
 
 db.sqlite3
 BachelorWeb/settings.py
+
+static/admin/
+static/admin/*
+static/dagbok/
+static/dagbok/*
+static/organizer/
+static/organizer/*
