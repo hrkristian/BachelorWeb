@@ -24,5 +24,8 @@ from dagbok import urls as dagbok_urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(organizer_urls)),
-    url(r'^dagbok/', include(dagbok_urls))
+    url(r'^dagbok/', include(dagbok_urls)),
+]
+urlpatterns += [
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

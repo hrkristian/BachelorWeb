@@ -26,12 +26,24 @@
 </head>
 <body onload="currentLink()">
 
-
-  <header><h1>
+<header>
+  {% if user.is_authenticated %}
+    <form class="header_logger_thinger" action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <p>Logged in as {{ user }}</p>
+      <button type="submit">Logg ut</button>
+    </form>
+  {% else %}
+    <form class="header_logger_thinger" action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Logg inn</button>
+    </form>
+  {% endif %}
+  <h1>
   {% block header %}
-    Bachelor Prosjekt
+  Bachelor Prosjekt
   {% endblock %}
-  </h1></header>
+</h1></header>
   <nav id="main_nav">
     <a class="nav_item" href="{% url 'home' %}">Forside</a>
     <a class="nav_item" href="{% url 'skisse' %}">Prosjektskisse</a>

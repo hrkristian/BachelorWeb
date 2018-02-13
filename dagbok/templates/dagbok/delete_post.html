@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <h2>Slette innlegg</h2>
 <form action="{{ form.get_delete_url }}" method="post">
   {% csrf_token %}
@@ -13,4 +14,7 @@
   <button class="nav_item" type="submit">Ja, slett</button>
   <a class="nav_item" href="{{ post.get_absolute_url }}">Nei, avbryt</a>
 </form>
+{% else %}
+<h2>Du er ikke logget inn, hvordan kom du hit i det hele tatt?</h2>
+{% endif %}
 {% endblock %}

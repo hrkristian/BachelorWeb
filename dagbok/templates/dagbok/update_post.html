@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <h2>Endre innlegg</h2>
 <form action="{{ form.get_edit_url }}" method="post">
   {% csrf_token %}
@@ -13,6 +14,8 @@
   {{ form.as_p }}
   <button class="nav_item" type="submit">Oppdater</button>
   <a class="nav_item" href="{{ post.get_absolute_url }}">Avbryt</a>
-
 </form>
+{% else %}
+<h2>Du er ikke logget inn, hvordan kom du hit i det hele tatt?</h2>
+{% endif %}
 {% endblock %}

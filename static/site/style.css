@@ -19,6 +19,13 @@
 .nav_item:hover {
   filter: brightness(200%) !important;
 }
+.header_logger_thinger * {
+  display: inline-block;
+  margin: 20px;
+}
+.header_logger_thinger {
+  float: right;
+}
 h1 {
   margin: 0;
   padding: 20px 0;

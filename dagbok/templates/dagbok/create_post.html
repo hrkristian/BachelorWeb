@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <h2>Nytt innlegg</h2>
-<form action="{{ form.get_create_url }}" method="post">
+<form action="{{ post.get_create_url }}" method="post">
   {% csrf_token %}
   {{ form.non_field_errors }}
   <p>
@@ -39,4 +40,8 @@
   <button class="nav_item" type="submit">Legg inn (Legg inn)</button>
   <a class="nav_item" href="{% url 'dagbok' slug %}">Avbryt</a>
 </form>
+{% else %}
+<h2>Du er ikke logget inn, hvordan kom du hit i det hele tatt?</h2>
+{% endif %}
+
 {% endblock %}
