@@ -3,19 +3,123 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'organizer/style.css' %}">
+<link rel="stylesheet" href="{% static 'organizer/skisse.css' %}">
 {% endblock %}
 
 {% block content %}
 <h2>Prosjektskisse / Forprosjektrapport</h2>
-<p>Grafdatabaser</p>
 <a class="nav_item" id="file_link" href="{% static 'docs/Forprosjektrapport_Kano.pdf' %}">
   Nedlastbar PDF
 </a>
-<h4>Sammendrag</h4>
+<h3>Sammendrag</h3>
 <p>
   Dette dokumentet belyser de beslutninger som må tas og de planer vi har for bachelorprosjektet.<br>
   Prosjektet skal kartlegge og resultere i et forslag for en software og hardware stack som er
   optimalisert for behandling av lenkede data.
 </p>
 <p>Dette gjøres på oppdrag for og i samarbeid med Arkitektum AS.</p>
+
+<h3>Innledning</h3>
+<h4>Bakgrunn</h4>
+<p>
+  Etter innsendt statusrapport for prosjektet har dialogen med Hallstein Søvik og Arkitektum AS blitt
+  videreført og møtet med Arkitektum ble avholdt 05.10.2017. Vi møtte da med daglig leder Hallstein
+  Søvik og utviklingsleder Tor Kjetil Nilsen diskuterte muligheten for et eventuelt bachelorprosjekt for bedriften.
+</p>
+<p>
+  Vi diskuterte dette i prosjektgruppen og kom frem til at vi ønsket å si ja til tilbudet fra Arkitektum.
+  Bjørn Kristoffersen ble så informert om vår avgjørelse og samarbeidet ble avsluttet. Deretter
+  kontaktet vi Arkitektum om vår avgjørelse og ønske om samarbeid. Vi deltok, etter oppfordring fra
+  Arkitektum og eget ønske, på Hack4no på Hønefoss 27. og 28. oktober 2017, sammen med Tor Kjetil
+  Nilsen og Benjamin Dehli. Dette ble gjort som et slags undersøkende forprosjekt til bacheloroppgaven.
+</p>
+<h3>Prosjektets organisering</h3>
+Interessenter:
+<ul>
+  <li>Arkitektum AS (eid (100%) av Tkt Utvikling AS hvor Tor Kjetil Nilsen er Styreleder og hovedaksjonær (100%))</li>
+  <li>Nikolai Fosså, Kristian Robertsen, Atle Amundsen</li>
+  <li>Ingrid Sundbø, Prosjektveileder</li>
+</ul>
+<p>Prosjektleder: Atle Amundsen</p>
+<p>Prosjektgruppe: Nikolai Fosså, Kristian Robertsen, Atle Amundsen</p>
+<p>Brukere: Arkitektum AS</p>
+
+<h3>Prosjektets målsetning og rammebetingelser</h3>
+<h4>Målsetning</h4>
+<p>Worst case: Kartlegging og dokumentering av software- og hardware-stack for prosessering og bruk av lenkede data. </p>
+<p>Best case: Prototyp på applikasjon som tar i bruk rammeverket som vi har skapt.</p>
+<h4>Avgrensninger</h4>
+<p>Tid: Tidsestimat totalt: 1200 timer (se Prosjektskriv, Oblig 1).</p>
+<h4>Forutsetninger</h4>
+Kjennskap til:
+<ul>
+  <li>Databaseteori</li>
+  <li>Datastrukturer</li>
+  <li>Operativsystemer</li>
+  <li>Programmering:<ul>
+    <li class="prog_lang_list">Java</li>
+    <li class="prog_lang_list">Python</li>
+    <li class="prog_lang_list">SQL</li>
+    <li class="prog_lang_list">HTML/CSS</li>
+    <li class="prog_lang_list">PHP</li>
+    <li class="prog_lang_list">Javascript</li>
+  </ul></li>
+</ul>
+<h3>Løsningsalternativer</h3>
+<h4>Felles</h4>
+<ul>
+  <li>Linux som tjener</li>
+  <li>Utarbeide en backend i Java eller Python</li>
+</ul>
+<h4>Atlernativ 1</h4>
+<p>Tilegne oss kunnskap om grafdatabaser generelt.</p>
+<p>Implementere løsning med Neo4j</p>
+<h4>Atlernativ 2</h4>
+<p>Tilegne oss kunnskap om grafdatabaser generelt</p>
+<p>Implementere løsning med MongoDB.</p>
+<h4>Atlernativ 3</h4>
+<p>Tilegne oss kunnskap om grafdatabaser generelt.</p>
+<p>Implementere løsning med kombinering av Neo4J og MongoDB.</p>
+<h3>Vurdering av løsningsalternativene</h3>
+<h4>Alternativ 1</h4>
+<p>
+  Vi vet at Jon Kvisli har tilegnet seg kunnskap om Neo4J allerede, og han har sendt
+  oss ressurser vi kan benytte. Han kan også brukes som en ressurs ved behov.
+</p>
+<h4>Alternativ 2</h4>
+<p>
+  MongoDB står som et mulig alternativ til Neo4j, og har blant annet
+  fordelen med å være en kombinasjon av graf- og relasjonsdatabase.
+</p>
+<p>MongoDB stiller svakere enn Neo4j hva gjelder tilgjengelige APIer (ref?)</p>
+<h4>Alternativ 3</h4>
+<p>Utviklere hos Neo4j har laget en stack som kombinerer MongoDB- og Neo4j-graf database, og har hatt suksess med den. </p>
+
+<h3>Anbefalt løsning</h3>
+<p><b>Alternativ 1:</b> Ideelt sett ville vi valgt alternativ 3. På grunn av tidsbegrensning er Alternativ 1 det naturlige valget.</p>
+
+<h3>Plan for det videre arbeidet</h3>
+[todo: img]
+
+<h3>Referanser (kilder)</h3>
+<table>
+  <thead><tr><td>Hva</td><td>Ressurs</td></tr></thead>
+  <tbody>
+    <tr>
+      <td>[1] Kombinere Neo4j og MongoDB</td>
+      <td>https://neo4j.com/blog/polyglot-persistence-mongodb-wanderu-case-study/</td>
+    </tr>
+    <tr>
+      <td>[2] Sammenlikning Neo4j vs MongoDB</td>
+      <td>
+        https://db-engines.com/en/system/MongoDB%3BNeo4j <br>
+        https://www.quora.com/How-does-Neo4j-compare-to-MongoDB
+      </td>
+    </tr>
+    <tr>
+      <td>[3] Innføring i grafdatabaser med Neo4j</td>
+      <td>Graph Databases 2nd Edition O’Reilly Media, 2015</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}

@@ -1,0 +1,7 @@
+.prog_lang_list::before {
+  content: "– "
+}
+.prog_lang_list {
+  display: inline;
+  margin-right: 20px;
+}

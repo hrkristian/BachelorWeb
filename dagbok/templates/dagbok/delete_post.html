@@ -8,7 +8,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <h2>Slette innlegg</h2>
-<form action="{{ form.get_delete_url }}" method="post">
+<form action="{{ post.get_delete_url }}" method="post">
   {% csrf_token %}
   <p>Er du sikker på at innlegget skal slettes?</p>
   <button class="nav_item" type="submit">Ja, slett</button>

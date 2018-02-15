@@ -8,7 +8,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <h2>Nytt innlegg</h2>
-<form action="{{ post.get_create_url }}" method="post">
+<form action="{% url 'dagbok_post_create' slug %}" method="post">
   {% csrf_token %}
   {{ form.non_field_errors }}
   <p>

@@ -3,6 +3,7 @@
 
 {% block content %}
 <h2>Dagbøker</h2>
+Her finner du dagbøkene for oss i prosjektgruppa. 
 <nav>
 {% for medlem in medlemmer  %}
   <a class="nav_item" href="{{ medlem.get_absolute_url }}">{{ medlem.name|title }}</a>
