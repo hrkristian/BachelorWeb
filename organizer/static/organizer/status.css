@@ -1,0 +1,18 @@
+h6, h5 {
+  border-left: 2px solid black;
+  padding-left: 5px;
+}
+
+.heading5, .heading6 {
+  padding: 0 20px;
+}
+.status-flex-item {
+  min-width: 400px;
+  flex-basis: 45%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#status-flex {
+  display: flex;
+  flex-wrap: wrap;
+}

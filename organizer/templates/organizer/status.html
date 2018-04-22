@@ -1,0 +1,106 @@
+{% extends parent_template|default:"base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'organizer/status.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Statusrapporter</h2>
+
+<div id="status-flex">
+  <div class="status-flex-item">
+    <h3>Statusrapport - Milepæl 2</h3>
+    <a class="nav_item" href="{% static 'docs/status_mp2.pdf' %}">Nedlastbar PDF</a>
+
+    <div class="heading4">
+      <h4>Hva denne rapporten beskriver</h4>
+      <p>
+        Denne rapporten beskriver våre aktiviteter og måloppnåelse i henhold til vår milepælsplan,
+        spesifikt milepæl 2.
+      </p>
+    </div>
+
+    <div class="heading4">
+      <h4>Revidering av mål, og justering av fremdriftsplan</h4>
+      <p>
+        Ingen endringer så langt.
+      </p>
+    </div>
+
+    <div class="heading4">
+      <h4>Andre tiltak, oppfølginger, og justeringer</h4>
+      <p>
+        Ingen endringer så langt.
+      </p>
+    </div>
+
+    <div class="heading4">
+      <h4>Problemangripelse</h4>
+
+      <div class="heading5">
+        <h5>Valg av grafdatabase</h5>
+        <p>
+          Vi har valgt å benytte oss av Neo4j, den mest brukte grafdatabasen på markedet.
+          Denne har et velutviklet Java-API, som vi så det som sannsynlig at vi måtte benytte oss av.
+        </p>
+      </div>
+      <div class="heading5">
+        <h5>Tilegning av kunnskap om grafdatabaser</h5>
+        <p>
+          For å bruke Neo4j i prosjektarbeidet,
+          er det nødvendig å ha grunnleggende kunnskap om spørrespråket som benyttes.
+          Neo4j har utviklet et eget spørrespråk, kalt Cypher Query Language.
+          Dette ligner spørrespråket for MySQL,
+          og er i stor grad intuitiv og lett å lære seg på en grunnleggende nivå.
+        </p>
+      </div>
+      <div class="heading5">
+        <h5>Kartlegging av datasett og verktøy for innsetting</h5>
+        <div class="heading6">
+          <h6>Datasett</h6>
+          <p>
+            Vi arbeider med datasettet Administrative Enheter, publisert av Kartverket.
+            Datasettet er tilgjengelig i JSON-format (GeoJSON).
+            Vi har satt oss inn i datasettets utforming for å kunne generere en graf
+            som representerer Norges fylker og kommuner og deres geografiske tilknytning til hverandre.
+          </p>
+        </div>
+
+        <div class="heading6">
+          <h6>Innsettingsverktøy</h6>
+          <p>
+            Vi startet med å bruke APOC, et 3.parts bibliotek for Neo4j, for innlasting av JSON-filer.
+            Etter en del arbeid med med APOC og Cypher Query Language, innså
+            vi behovet for mer finmasket kontroll over innsetting.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="heading4">
+      <h4>Om prosjektleveransen</h4>
+      <p>
+        Vår prosjektleveranse til oppdragsgiver er en erfaringsrapport,
+        som dokumenterer våre erfaringer og arbeid mot en grafdatabase.
+      </p>
+      <p>
+        Erfaringsrapporten er et kontinuerlig dokumenteringsarbeid, og dens
+        utforming er ikke bestemt.
+        Det legges til rette for at den skal være lettlest og enkel å forstå for
+        en som ikke er kjent med grafdatabaser.
+      </p>
+    </div>
+  </div>
+  {#  #}
+  {# Statusrapport skille #}
+  {#  #}
+  <div class="status-flex-item">
+    <h3>Statusrapport - Milepæl 3</h3>
+    <a class="nav_item" href="{% static 'docs/status_mp3.pdf' %}">Nedlastbar PDF</a>
+
+    <h4>asdf</h4>
+  </div>
+</div>
+{% endblock %}
