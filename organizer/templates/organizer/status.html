@@ -100,7 +100,213 @@
     <h3>Statusrapport - Milepæl 3</h3>
     <a class="nav_item" href="{% static 'docs/status_mp3.pdf' %}">Nedlastbar PDF</a>
 
-    <h4>asdf</h4>
+    <div class="heading4">
+      <h4>Hva denne rapporten beskriver</h4>
+      <p>
+        Denne rapporten beskriver våre aktiviteter og måloppnåelse i henhold til
+        vår milepælsplan, spesifikt milepæl 3 og 4.
+        Rapporten beskriver også endring av mål og andre justeringer vi har
+        besluttet etter milepæl 2.
+      </p>
+    </div>
+
+    <div class="heading4">
+      <h4>Problembeskrivelse</h4>
+      <p>
+        Arkitektum AS har et ønske om å ta i bruk teknologi som omhandler grafdatabaser.
+        For å avgjøre om dette er en teknologi som kan passe for enkelte
+        forretningstilfeller hos de, behøver de en erfaringsrapport som
+        vurderer egnede databaser og dokumenterer prosessen med å konvertere
+        data til passende format, og hvordan koble/lenke et datasett med et annet.
+        I rapporten er det spesielt viktig at problemområder og løsningene
+        på disse detaljeres.
+      </p>
+      <p>
+        Oversikt og teoretisk sammenligning av flere grafdatabaser skal også
+        inngå i erfaringsrapporten.
+        Dersom det er tid, vil vi også utarbeide en erfaringsrapport for en
+        annen grafdatabase, med utgangspunkt i samme datasett.
+      </p>
+      <p>
+        En slik rapport gjør at Arkitektum AS enklere kan vurdere mengde
+        forarbeid ved bruk av andre typer datasett.
+      </p>
+      <p>
+        Vi tar utgangspunkt i datasettet Administrative Enheter (dataeier: Kartverket).
+      </p>
+    </div>
+
+    <div class="heading4">
+      <h4>Revidering av mål og justering av fremdriftsplan</h4>
+      <div class="heading5">
+        <h5>Endring av eksisterende mål og fremdriftsplan</h5>
+        <ul>
+          <li>Tatt bort mål om å koble nytt datasett</li>
+          <li>Tatt bort mål om oversikt og teoretisk sammenligning mellom flere grafdatabaser.</li>
+          <li>Prosjektleveransen er utsatt til 08.05.2018 (fra 27.04)</li>
+          <li>Vi skal ikke benytte en annet grafdatabase enn den vi har valgt (Neo4j)</li>
+        </ul>
+        <h5>Innføring av nye mål</h5>
+        <ul>
+          <li>Erfaringsrapporten skal sammenligne NoSQL og SQL databaser for innsetting av data.</li>
+          <li>Erfaringsrapporten skal ha en liten del om vedlikeholdbarhet av Neo4j databaser.</li>
+        </ul>
+        <h5>Annet om utviklingsmiljø</h5>
+        <p>
+          Vi benytter Java 8 i stedet for Java 9. Årsaken til dette er at Neo4j
+          ikke har støtte for Java 9 per dags dato. Dette har vært gjeldende
+          siden starten av prosjektarbeidet.
+        </p>
+        <h5>Generelt</h5>
+        <p>
+          Utarbeiding av erfaringsrapport og prosjektrapport er
+          prioriteringsområdene for prosjektarbeidet mot prosjektavslutting.
+        </p>
+      </div>
+    </div>
+    <div class="heading4">
+      <h4>Problemangripelse</h4>
+      <div class="heading5">
+        <h5>Generell info</h5>
+        <p>
+          Generelt så har det vært mer arbeid med erfaringsrapporten siden forrige samling.
+        </p>
+        <h5>Nytt forsøk med CQL</h5>
+        <p>
+          Vi har igjen forsøkt å løse problemet ved å benytte Cypher Query
+          Language, som bar frukter.
+          I denne løsningen har vi tatt for oss datasettet for Telemark fylke,
+          der vi har satt inn alle kommuner kommer i Telemark og grafen
+          gjenspeiler nå kommunenes geografiske relasjon til hverandre.
+          For å verifisere at data er korrekt innsatt, har vi gjort flere
+          spørringer mot databasen på kommuner og koordinater.
+          Disse kommunene og koordinatene har varierende nivå av kompleksitet
+          i deres relasjoner mot nabokommuner og koordinatenes neste punkt.
+          Disse spørringene har blitt krysskontrollert med oppslag på
+          posisjoner ved bruk av tjenesten
+          <a href="http://finnposisjon.test.geonorge.no/">finnposisjon</a>.
+        </p>
+        <p>
+          Denne løsningen anbefales ikke på større datasett, i hvert fall
+          ikke den spørringen vi har utviklet for for innsetting.
+          Den er ikke effektiv, da innsetting skjer i O(N2) tid.
+          Den kan imidlertid være hensiktsmessig å benytte på et sett av
+          kommuner innenfor et fylke, til nøds hele fylket og dets kommuner.
+        </p>
+      </div>
+    </div>
+    <div class="heading4">
+      <h4>Erfaring med arbeid og prosjektstyring</h4>
+      <div class="heading5">
+        <h5>Arbeid</h5>
+        <p>
+          Vi har fått låne datalab ved Høgskolen i Sørøst-Norge.
+          Dette har vært veldig gunstig, da vi har hatt en fast arbeidsplass
+          gjennom prosjektarbeidet.
+          Det har vært tidsbesparende, da vi slipper å ta hensyn til rombooking,
+          kartlegging av utstyr som finnes på grupperom, etc. <br>
+          Andre gevinster er tilgang på utstyr, i hovedsak flere skjermer,
+          som har gjort oss mer effektive.
+        </p>
+        <h5>Prosjektstyring</h5>
+        <p>
+          Vi har brukt prosjektbeskrivelse som vårt styringsdokument.
+          Avvik og endringer dokumenteres under hver enkelt milepæl.
+          Vi har til og med milepæl 2 nådd våre mål og utført våre aktiviteter
+          i henhold til fremdriftsplanen.
+        </p>
+        <p>
+          Endringer i mål og fremdriftsplanen mot milepæl 3 og 4,
+          sammenlignet med prosjektbeskrivelsen, er detaljer ovenfor.
+        </p>
+        <p>
+          Vi har ikke benyttet Kanban som metode, da vi ikke så det som hensiktsmessig.
+        </p>
+        <h5>Andre elementer</h5>
+        <p>
+          Gjennom prosjektarbeidet har prosjektleder vært en del fraværende
+          grunnet sykdom.
+          Dette har vært en av risikofaktorene som vi identifiserte i
+          prosjektbeskrivelsen, og som vi har tatt høyde for i tidsestimeringen. <br>
+          Selv om vi har tatt høyde for dette, har lengde og hyppighet på
+          sykdomsforløpene ført til en økt arbeidsbyrde på de andre prosjektdeltakerne.
+        </p>
+      </div>
+    </div>
+    <div class="heading4">
+      <h4>Prosessmål for prosjektdeltakerne</h4>
+      <p>
+        Prosjektdeltakerne har opparbeidet seg ny kunnskap om grafdatabaser
+        generelt, og Neo4j spesielt.
+      </p>
+      <p>
+        Som nevnt i avsnittet om prosjektstyring, benyttet vi oss ikke av
+        Kanban som metode og verktøy. <br>
+        Når vi ser tilbake på prosjektarbeid som helhet,
+        hadde Kanban vært hensiktsmessig å bruke, da det i
+        prosjektarbeid er det ikke alltid like lett å identifisere oppgaver.
+      </p>
+    </div>
+
+
+    <div class="heading4">
+      <h4>Vedlegg</h4>
+      <b>Justert tidsestimat: </b>
+      <div id="progress" class="table-container" onclick="swapProgress()">
+      .
+      </div>
+      <b>Justerte milepæler:</b>
+      <div id="milestone" class="table-container" onclick="swapMilestone()">
+      .
+      </div>
+    </div>
   </div>
 </div>
+
+<div id="progressNew" class="hidden">
+  {% include "organizer/tables/progressNew.html" %}
+</div>
+<div id="milestoneNew" class="hidden">
+  {% include "organizer/tables/milestonesNew.html" %}
+</div>
+
+<div id="progressOld" class="hidden">
+  {% include "organizer/tables/progressOld.html" %}
+</div>
+<div id="milestoneOld" class="hidden">
+  {% include "organizer/tables/milestonesOld.html" %}
+</div>
+
+<script type="text/javascript">
+var progressNew = false;
+var milestoneNew = false;
+
+function swapProgress() {
+  var e = document.getElementById("progress");
+
+  if (progressNew) // Progress container shows the new table
+    swap(e, document.getElementById("progressOld").innerHTML);
+  else
+    swap(e, document.getElementById("progressNew").innerHTML);
+
+  progressNew = !progressNew;
+}
+function swapMilestone() {
+  var e = document.getElementById("milestone");
+
+  if (milestoneNew) // Milestone container shows the new table
+    swap(e, document.getElementById("milestoneOld").innerHTML);
+  else
+    swap(e, document.getElementById("milestoneNew").innerHTML);
+
+  milestoneNew = !milestoneNew;
+}
+function swap(element, html) {
+  element.innerHTML = html;
+}
+
+swapMilestone();
+swapProgress();
+</script>
+
 {% endblock %}

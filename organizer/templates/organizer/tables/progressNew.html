@@ -1,0 +1,76 @@
+<b class="tableHeader">Ny</b> Klikk på tabellen for å bytte mellom nytt og gammelt.
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="14">Ukenummer</th>
+    </tr>
+    <tr>
+      <th>Faser</th>
+      <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+      <th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th>
+    </tr>
+  </thead>
+  <tbody id="tidsbudsjett_rader">
+    <tr>
+      <td>Prosjektbeskrivelse</td>
+      {% for i in 'vviiiiiiiiiiii' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_red"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Datakonvertering</td>
+      {% for i in 'ivvvviiiiiiiii' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_green"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Koble datasett</td>
+      {% for i in 'iiiiivvvviiiii' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_pink"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Ferdigstilling/overlevering erfaringsrapport</td>
+      {% for i in 'iiiiiiiiiiiiiv' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_blue"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Rapportlevering m/vedlegg</td>
+      {% for i in 'iiiiiiiiiivvvv' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_yellow"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Dokumentasjon (erfaringsrapport)</td>
+      {% for i in 'ivvvvvvvvvvvvv' %}
+        {% if i == 'v' %}
+          <td class="tidsbudsjett_celle_fill"></td>
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>

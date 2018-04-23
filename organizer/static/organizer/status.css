@@ -1,11 +1,19 @@
+.tableHeader {
+  color: #fff;
+  background: #000;
+  padding: 20px 10px 0 10px;
+}
+
 h6, h5 {
   border-left: 2px solid black;
   padding-left: 5px;
 }
 
 .heading5, .heading6 {
-  padding: 0 20px;
+  padding: 0 10px;
 }
+
+
 .status-flex-item {
   min-width: 400px;
   flex-basis: 45%;
@@ -15,4 +23,77 @@ h6, h5 {
 #status-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Tables */
+.table_ansvar td:first-of-type {
+  width: 200px;
+}
+.table_ansvar td {
+  padding: 5px 20px;
+}
+.table_ansvar th {
+  padding: 5px 20px;
+  text-align: left;
+}
+.table_ansvar tr {
+  vertical-align: top;
+}
+
+#milestone td {
+  padding: 10px 10px;
+  border: 2px solid black;
+}
+#milestone th {
+  padding: 5px 10px;
+  border: 2px solid black;
+}
+#milestone {
+  border-collapse: collapse;
+}
+
+#tidsestimat td {
+  width: 100px;
+  height: 20px;
+  border: 2px solid black;
+}
+#tidsestimat {
+  border-collapse: collapse;
+}
+.tidsbudsjett_celle_red { background-color: #f32; }
+.tidsbudsjett_celle_green { background-color: #5f5; }
+.tidsbudsjett_celle_pink { background-color: #f8f; }
+.tidsbudsjett_celle_blue { background-color: #38f; }
+.tidsbudsjett_celle_yellow { background-color: #ff6; }
+.tidsbudsjett_celle_fill { background-color: rgb(100,100,100); }
+
+.table-container td, .table-container th {
+  border: 2px solid black;
+  padding: 5px 10px;
+}
+
+.table-container table {
+  border-collapse: collapse;
+}
+
+.table-container {
+  max-width: 80wv;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+#arbeidstider td, #arbeidstider th {
+  border: 2px solid black;
+  padding: 5px 10px;
+}
+#arbeidstider table {
+  border-collapse: collapse;
+}
+#arbeidstider {
+  max-width: 80wv;
+  overflow-x: auto;
 }
