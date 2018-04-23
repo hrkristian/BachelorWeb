@@ -69,7 +69,7 @@ h6, h5 {
 .tidsbudsjett_celle_pink { background-color: #f8f; }
 .tidsbudsjett_celle_blue { background-color: #38f; }
 .tidsbudsjett_celle_yellow { background-color: #ff6; }
-.tidsbudsjett_celle_fill { background-color: rgb(100,100,100); }
+.tidsbudsjett_celle_fill { background-color: rgb(100,100,100); color: white;}
 
 .table-container td, .table-container th {
   border: 2px solid black;
