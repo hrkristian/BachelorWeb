@@ -1,1 +1,36 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'organizer/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Forside</h2>
+
+<div id="flex_container">
+  {# Oversikt over medlemmer #}
+  <div class="flex_item">
+    <h3>Gruppemedlemmer</h3>
+    {% for medlem in medlemmer %}
+    <div class="medlem_section" id="flex_one">
+      <div class="medlem_section_image">
+        <img src="{% static 'images/profil_'|add:medlem.slug|add:'.jpg' %}" alt="Profile Picture" class="medlem_section_item">
+      </div>
+      <div class="medlem_section_details">
+        <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
+        {% if medlem.slug == 'atle' %}
+        Prosjektleder
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {# Introduksjon til gruppa og nettstedet #}
+  <div class="flex_item" id="flex_two">
+    <h2>Introduksjon</h2>
+    Hei c:
+  </div>
+</div>
+
+{% endblock %}

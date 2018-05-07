@@ -52,6 +52,11 @@ footer {
   text-align: center;
   white-space: nowrap;
   width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+}
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
 }
 header, footer {
   background: rgb(47, 52, 63);
