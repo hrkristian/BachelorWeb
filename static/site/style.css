@@ -1,7 +1,19 @@
 /*
 * Dette er default stylesheet
 */
-
+.inline-link:hover {
+  background-color: rgb(47, 52, 63);
+  color: #fff;
+  border: 1px solid black;
+}
+.inline-link {
+  color: black;
+  text-decoration: none;
+  padding: 0 4px;
+  border-radius: 5px;
+  background-color: #ddd;
+  border: 1px solid #ddd;
+}
 .nav_item#current_link {
   filter: brightness(200%);
 }
@@ -15,6 +27,9 @@
   background-color: rgb(47, 52, 63);
   border: 2px solid black;
   border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  box-shadow: 1px 1px 1px 1px rgb(147, 152, 163);
 }
 .nav_item:hover {
   filter: brightness(200%) !important;
@@ -53,7 +68,7 @@ footer {
   white-space: nowrap;
   width: 100%;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 h1, h2, h3 {
   font-family: 'Raleway', sans-serif;

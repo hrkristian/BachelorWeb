@@ -1,17 +1,27 @@
+.raled {
+  font-family: 'Raleway', sans-serif;
+}
 #flex_two {
-
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 600px;
+  min-width: 300px;
 }
 #flex_one {
-
+  max-width: 600px;
+  min-width: 300px;
 }
-.flex-item {
-  flex-basis: 50%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  border: 1px solid green;
+.flex_item {
+  flex-basis: auto;
+  /* border: 1px solid green; */
 }
 #flex_container {
   display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+
+  /* border: 1px solid red; */
+  /* padding: 2px; */
 }
 .medlem_section_image img {
   width: 100%;
@@ -34,8 +44,6 @@
 .medlem_section {
   position: relative;
   overflow: hidden;
-  max-width: 600px;
-  min-width: 300px;
   border: 1px solid rgb(47, 52, 63);
   box-shadow: 0 0 10px rgb(47, 52, 63);
   margin: 20px 0;
