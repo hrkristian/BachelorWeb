@@ -1,3 +1,18 @@
+@media screen and (max-width: 500px) {
+  #flex_two {
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+  #flex_one {
+    min-width: 0 !important;
+    width: 100%;
+  }
+  .medlem_section {
+    /* padding-right: 10px; */
+    width: 100%;
+  }
+}
+
 .raled {
   font-family: 'Raleway', sans-serif;
 }
@@ -9,7 +24,7 @@
 }
 #flex_one {
   max-width: 600px;
-  min-width: 300px;
+  min-width: 400px;
 }
 .flex_item {
   flex-basis: auto;
@@ -33,9 +48,9 @@
 }
 .medlem_section_image {
   display: inline-block;
-  vertical-align: top;
-  width: 50px;
-  height: 50px;
+  vertical-align: center;
+  width: 70px;
+  height: 70px;
   background-color: rgb(47, 52, 63);
   color: white;
   padding: 0.5em;

@@ -10,18 +10,21 @@
 
 <div id="flex_container">
   {# Oversikt over medlemmer #}
-  <div class="flex_item">
+  <div class="flex_item" id="flex_one">
     <h3>Gruppemedlemmer</h3>
     {% for medlem in medlemmer %}
-    <div class="medlem_section" id="flex_one">
+    <div class="medlem_section">
       <div class="medlem_section_image">
         <img src="{% static 'images/profil_'|add:medlem.slug|add:'.jpg' %}" alt="Profile Picture" class="medlem_section_item">
       </div>
       <div class="medlem_section_details">
         <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
         {% if medlem.slug == 'atle' %}
-        Prosjektleder
+        Prosjektleder<br>
+        {% else %}
+        Prosjektmedlem<br>
         {% endif %}
+        {{ medlem.contact }}
       </div>
     </div>
     {% endfor %}
@@ -31,29 +34,44 @@
     <h3>Introduksjon</h3>
     <p>
       Vi er en gruppe på tre studenter som i forbindelse med bachelorprosjektet
-      i sjette semester har påtatt oss en oppgave fra
+      i sjette semester har påtatt oss en oppgave for
       <a class="inline-link" target="_blank" href="https://www.arkitektum.no">
         Arkitektum AS.
       </a>
     </p>
     <p>
       Oppgaven vår er å utrede grafdatabasers egnethet for behandling av
-      datasett. For mer informasjon, se prosjektskisse og prosjektbeskrivelse.
+      datasett. Produktet av dette prosjektet er en erfaringsrapport,
+      sentralt i grunnlaget for denne rapporten er en Java-applikasjon,
+      lenket til å toppen av siden (
+      <a target="_blank" class="inline-link raled" href="https://github.com/gitsieg/Neo4Java">
+        Kildekode<!--
+      --></a>)
+      <br>
+      For mer informasjon, se prosjektskisse og prosjektbeskrivelse.
     </p>
     <p>
-      Denne siden utgjør en komplett ressurs for prosjektet. Linkene er i stor
-      grad selv-beskrivende, men vi beskriver allikevel noen ting for sikkerhets
+      <a href="{% static '/docs/Prosjektrapport - Datainnsetting i grafdatabasen Neo4j.pdf' %}"
+        class="raled inline-link">Prosjektrapporten</a> og
+      <a href="{% static '/docs/Erfaringsrapport - Datainnsetting i Neo4j.pdf' %}"
+        class="raled inline-link">erfaringsrapporten</a>
+      ligger under Øvrige Dokumenter.
+
+    </p>
+    <p>
+      Denne siden utgjør en komplett ressurs for prosjektet. Linkene bør i stor
+      grad være selv-beskrivende, men vi tar allikevel for oss noen ting for sikkerhets
       skyld...
       <ul>
         <li>
-          <a class="inline-link raled" href="https://github.com/gitsieg/Neo4Java">
-            Kildekode
-          </a> er en lenke til vårt ekstere
-          kode-repositorie, der koden for prosjektet befinner seg. <br>
+          <a target="_blank" class="inline-link raled" href="https://github.com/gitsieg/Neo4Java">
+            Kildekode<!--
+          --></a> er en lenke til vårt eksterne
+          kode-repositorie, der koden for prosjektet befinner seg.<br>
           Det lenkes til ennå et kode-repositorie under
           <a class="inline-link raled" href="{% url 'docs' %}">
-            Øvrige Dokumenter
-          </a>, dette er bare et lite demo-prosjekt; ikke hovedprosjektet.
+            Øvrige Dokumenter<!--
+          --></a>, dette er bare et lite demo-prosjekt; ikke hovedprosjektet.
         </li>
         <li>
           Alle sider som inneholder ett eller flere dokumenter, har
@@ -62,6 +80,10 @@
           om feil på siden.
         </li>
       </ul>
+    </p>
+    <p>
+      Siden inneholdt tidligere en Dagbok-seksjon. Denne har vi underveis
+      valgt å gå bort ifra. Erfaringsrapporten representerer arbeidet underveis.
     </p>
   </div>
 </div>

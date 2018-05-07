@@ -1,3 +1,9 @@
+@media screen and (max-width: 500px) {
+  .status-flex-item {
+    min-width: 100% !important;
+  }
+}
+
 .tableHeader {
   color: #fff;
   background: #000;

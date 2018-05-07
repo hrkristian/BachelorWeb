@@ -1,6 +1,27 @@
 /*
 * Dette er default stylesheet
 */
+@media screen and (max-width: 500px)  {
+  .header_logger_thinger button {
+    width: 1em !important;
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 1em !important;
+    font-size: 0.8em;
+  }
+  .header_logger_thinger {
+    margin: 0;
+  }
+  main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  footer {
+    white-space: normal !important;
+    font-size: 1rem !important;
+  }
+}
+
 .inline-link:hover {
   background-color: rgb(47, 52, 63);
   color: #fff;
