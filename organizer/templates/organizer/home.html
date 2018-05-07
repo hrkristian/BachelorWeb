@@ -21,10 +21,12 @@
         <h4 class="medlem_section_item"> {{ medlem.name }}</h4>
         {% if medlem.slug == 'atle' %}
         Prosjektleder<br>
+        atle@uan.no
         {% else %}
         Prosjektmedlem<br>
-        {% endif %}
         {{ medlem.contact }}
+        {% endif %}
+
       </div>
     </div>
     {% endfor %}
